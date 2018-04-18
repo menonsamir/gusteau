@@ -7,6 +7,7 @@
 #include "contest_message.hh"
 #include "controller.hh"
 #include "poller.hh"
+#include <unistd.h>
 
 using namespace std;
 using namespace PollerShortNames;
