@@ -180,14 +180,14 @@ void Controller::ack_received( const uint64_t sequence_number_acked,
     this->rtt_ratio = (((float)new_rtt) / this->min_rtt);
 
     // a rtt_ratio that these Remy models aren't good at
-    if (this->rtt_ratio > 1.961829) {
+    /*if (this->rtt_ratio > 1.961829) {
       this->cur_win = this->cur_win*0.9;
       if (this->cur_win < 1) {
         this->cur_win = 1;
       }
-    } else {
+    } else {*/
       this->apply_rules();
-    }
+    //}
   
   /*
     double new_rtt = (double)(timestamp_ack_received - send_timestamp_acked);
