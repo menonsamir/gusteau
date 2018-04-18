@@ -140,18 +140,18 @@ void Controller::ack_received( const uint64_t sequence_number_acked,
                                /* when the ack was received (by sender) */
 {
   /* Default: take no action */
-  /*this->acks_recvd += 1;
+  this->acks_recvd += 1;
   if (this->acks_recvd >= this->cur_win) {
     this->acks_recvd = 0;
     this->cur_win += 1;
   }
-  if (timestamp_ack_received - send_timestamp_acked > 500) {
+  if (timestamp_ack_received - send_timestamp_acked > 350) {
     this->cur_win = this->cur_win/2;
     this->acks_recvd = 0;
     if (this->cur_win < 1) {
       this->cur_win = 1;
     }
-  }*/
+  }
   /*if (timestamp_ack_received - send_timestamp_acked > 250) {
     this->cur_win = this->cur_win*0.5;
     if (this->cur_win < 1) {
@@ -159,7 +159,7 @@ void Controller::ack_received( const uint64_t sequence_number_acked,
     }
   } else {*/
 
-  
+  /*
     // update sewma, rewma, rttr, slow
     uint64_t new_s = send_timestamp_acked - this->last_send;
     this->last_send = send_timestamp_acked;
@@ -180,15 +180,15 @@ void Controller::ack_received( const uint64_t sequence_number_acked,
     this->rtt_ratio = (((float)new_rtt) / this->min_rtt);
 
     // a rtt_ratio that these Remy models aren't good at
-    /*if (this->rtt_ratio > 1.961829) {
+    if (this->rtt_ratio > 1.961829) {
       this->cur_win = this->cur_win*0.9;
       if (this->cur_win < 1) {
         this->cur_win = 1;
       }
-    } else {*/
+    } else {
       this->apply_rules();
     //}
-  
+  */
   /*
     double new_rtt = (double)(timestamp_ack_received - send_timestamp_acked);
     this->acks_recvd += 1;
