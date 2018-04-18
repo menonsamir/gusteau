@@ -15,9 +15,9 @@ private:
   /* Add member variables here */
   uint64_t acks_recvd;
   double cur_win;
-  //uint64_t intersend;
+  uint64_t intersend;
 
-  /*uint64_t last_ack;
+  uint64_t last_ack;
   double r_ewma; // moving average of interval between acks
   double r_slowewma; // slower moving average of interval between acks
 
@@ -25,8 +25,8 @@ private:
   double s_ewma; // moving average between sender timestamps echoed in acks
 
   uint64_t min_rtt; // smallest RTT so far
-  double rtt_ratio; // ratio of last RTT to smallest RTT so far*/
-  double rtt_ewma;
+  double rtt_ratio; // ratio of last RTT to smallest RTT so far
+  /*double rtt_ewma;
   double v;
   double delta_inv;
   std::deque<std::pair<double, double> > rtts;
@@ -34,7 +34,7 @@ private:
   double last_win;
   bool last_dir;
   bool last_last_dir;
-  double rtt_standing;
+  double rtt_standing;*/
 
 public:
   /* Public interface for the congestion controller */
